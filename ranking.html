@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="rankingstyle.css">
+        <title>IslandRankings</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <button onclick="window.location.href='main.html'" id="backIslanders">Back to Islanders</button>
+        <h1 class="title">the results</h1>
+        <div id="rankingsContainer">
+            <canvas id="rankingsChart" style="justify-content: center;"></canvas>
+        </div>
+
+        <script>
+            const STORAGE_KEY = "organelleIslandScores";
+            const defaultScores = {
+                Nucleus: 25,
+                Mitochondria: 25,
+                Chloroplast: 25,
+                Ribosome: 25,
+                Golgi: 25,
+                Lysosome: 25,
+                CellMembrane: 25,
+                Vacuole: 25
+            };
+            const gradientNucleus = document.getElementById("rankingsChart").getContext("2d").createLinearGradient(0, 0, 0, 400);
+            gradientNucleus.addColorStop(0.5, "rgb(255, 123, 0)");
+            gradientNucleus.addColorStop(1, "rgb(231, 230, 238)");
+
+            const gradientMitochondria = document.getElementById("rankingsChart").getContext("2d").createLinearGradient(0, 0, 0, 400);
+            gradientMitochondria.addColorStop(0.5, "rgb(153, 0, 153)");
+            gradientMitochondria.addColorStop(1, "rgb(231, 230, 238)");
+
+            const gradientChloroplast = document.getElementById("rankingsChart").getContext("2d").createLinearGradient(0, 0, 0, 400);
+            gradientChloroplast.addColorStop(0.5, "rgb(0, 214, 54)");
+            gradientChloroplast.addColorStop(1, "rgb(231, 230, 238)");
+
+            const gradientRibosome = document.getElementById("rankingsChart").getContext ("2d").createLinearGradient(0, 0, 0, 400);
+            gradientRibosome.addColorStop(0.5, "rgb(38, 0, 255)");
+            gradientRibosome.addColorStop(1, "rgb(231, 230, 238)");
+
+            const gradientGolgi = document.getElementById("rankingsChart").getContext("2d").createLinearGradient(0, 0, 0, 400);
+            gradientGolgi.addColorStop(0.5, "rgb(255, 0, 0)");
+            gradientGolgi.addColorStop(1, "rgb(231, 230, 238)");
+
+            const gradientLysosome = document.getElementById("rankingsChart").getContext("2d").createLinearGradient(0, 0, 0, 400);
+            gradientLysosome.addColorStop(0.5, "rgb(0, 255, 255)");
+            gradientLysosome.addColorStop(1, "rgb(231, 230, 238)");
+
+            const gradientCellMembrane = document.getElementById("rankingsChart").getContext("2d").createLinearGradient(0, 0, 0, 400);
+            gradientCellMembrane.addColorStop(0.5, "rgb(255, 255, 0)");
+            gradientCellMembrane.addColorStop(1, "rgb(231, 230, 238)");
+
+            const gradientVacuole = document.getElementById("rankingsChart").getContext("2d").createLinearGradient(0, 0, 0, 400);
+            gradientVacuole.addColorStop(0.5, "rgb(128, 0, 128)");
+            gradientVacuole.addColorStop(1, "rgb(231, 230, 238)");
+
+            const storedScores = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+            const scores = { ...defaultScores, ...storedScores };
+            const rankedEntries = Object.entries(scores)
+                .map(([name, points]) => ({ name, points }))
+                .sort((a, b) => b.points - a.points);
+
+            const ctx = document.getElementById("rankingsChart").getContext("2d");
+
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: rankedEntries.map(entry => entry.name),
+                    datasets: [{
+                        label: "Points",
+                        data: rankedEntries.map(entry => entry.points),
+                        backgroundColor: [
+                            gradientNucleus,
+                            gradientMitochondria,
+                            gradientChloroplast,
+                            gradientRibosome,
+                            gradientGolgi,
+                            gradientLysosome,
+                            gradientCellMembrane,
+                            gradientVacuole
+                        ],
+                        borderColor: [
+                            "rgb(238, 242, 245)",
+                            "rgb(238, 242, 245)",
+                            "rgb(238, 242, 245)",
+                            "rgb(238, 242, 245)",
+                            "rgb(238, 242, 245)",
+                            "rgb(238, 242, 245)",
+                            "rgb(238, 242, 245)",
+                            "rgb(238, 242, 245)"
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        
+                        y: {
+                            max : 100,
+                            min: 0,
+                            beginAtZero: false,
+                            ticks: {
+                                color:'white',
+                                stepSize: 5
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

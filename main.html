@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="mainstyle.css">
+        <script src="control.js" defer></script>
+        <div class="header">
+            <title>Organelle Island</title>
+            <p class="top"><strong>organelle</strong>island!</p>
+            <img src="images/logo.png" alt="acock" class="logo">
+        </div>
+    </head>
+    <body>
+       <div id="mainContainer">
+        <button id="islanderRanking">Islander Rankings</button>
+        <h1 class="title">Vote for Your Favorite Organelle!</h1> 
+        <p class="animate__animatedanimate__blink"> the lower you go the spicer the constentants get... </p>
+       </div>
+
+       <div class="voteContainer">
+            <div class="organelle" id="nucleus">
+                <p id="organelleName"><strong>Nate Nucleus</strong></p>
+                <img src="natenucleus.png" alt="Nucleus">
+                <button class="profileButton" data-organelle="Nucleus">View Profile</button>
+                <button class="voteButton" data-organelle="Nucleus">Vote</button>
+
+            </div>
+            <div class="organelle" id="mitochondria">
+                <p id="organelleName"><strong>Mina DeChondria</strong></p>
+                <img src="minadechon.png" alt="Mitochondria">
+                <button class="profileButton" data-organelle="Mitochondria">View Profile</button>
+                <button class="voteButton" data-organelle="Mitochondria">Vote</button>
+            </div>
+            <div class="organelle" id="chloroplast">
+                <p id="organelleName"><strong>Craig Chloroplast</strong></p>
+                <img src="craigchloro.png" alt="Chloroplast">
+                <button class="profileButton" data-organelle="Chloroplast">View Profile</button>
+                <button class="voteButton" data-organelle="Chloroplast">Vote</button>
+            </div>
+            <div class="organelle" id="ribosome">
+                <p id="organelleName"><strong>Rachel Ribosome</strong></p>
+                <img src="rachribosome.png" alt="Ribosome">
+                <button class="profileButton" data-organelle="Ribosome">View Profile</button>
+                <button class="voteButton" data-organelle="Ribosome">Vote</button>
+            </div>
+            <div class="organelle" id="golgi">
+                <p id="organelleName"><strong>Gio Golgi Apparateuz</strong></p>
+                <img src="gioGolgi.png" alt="Golgi Apparatus">
+                <button class="profileButton" data-organelle="Golgi">View Profile</button>
+                <button class="voteButton" data-organelle="Golgi">Vote</button>
+            </div>
+            <div class="organelle" id="lysosome">
+                <p id="organelleName"><strong>Leah Lysosome</strong></p>
+                <img src="leahlyso.png" alt="Lysosome">
+                <button class="profileButton" data-organelle="Lysosome">View Profile</button>
+                <button class="voteButton" data-organelle="Lysosome">Vote</button>
+            </div>
+            <div class="organelle" id="membrane">
+                <p id="organelleName"><strong>Calen Cell Membrane</strong></p>
+                <img src="calencell.png" alt="Cell Membrane">
+                <button class="profileButton" data-organelle="membrane">View Profile</button>
+                <button class="voteButton" data-organelle="membrane">Vote</button>
+            </div>
+            <div class="organelle" id="vacuole">
+                <p id="organelleName"><strong>Verina Vacuole</strong></p>
+                <img src="verinavac.png" alt="Vacuole">
+                <button class="profileButton" data-organelle="Vacuole">View Profile</button>
+                <button class="voteButton" data-organelle="Vacuole">Vote</button>
+            </div>
+        </div>
+
+        <div id="islanderDescription" class="islanderDescription" hidden=True>
+            <div class="organelleProfile" id="nucleusProfile">
+                <h2>Nate Nucleus</h2>
+                <p>Hey guys, I am Nate Nucleus, I am from Beverly Hills, California. In the villa, you could call me the ultimate control center and the main brain behind every operation. I carry the total blueprint for what makes this entire place run, keeping all the DNA, genetic instructions, and high-value information locked down safe inside my double-membrane envelope. </p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+            <div class="organelleProfile" id="mitochondriaProfile">
+                <h2>Mina DeChondria</h2>
+                <p>Hey guys I am Mina DeChondria. I am 24 and from San Antonio, Texas. My absolute main role in the villa is being the total powerhouse of the house. I bring high energy 24/7! I am constantly turning all that raw food and glucose into pure ATP, so when the rest of the cell is feeling drained. I spend my days working the inner membrane and running the electron transport chain to build up that perfect proton gradient.</p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+            <div class="organelleProfile" id="chloroplastProfile">
+                <h2>Craig Chloroplast</h2>
+                <p>WHATS UPP! I am Craig Chloroplast. I am from Buffalo, New York. In the villa, I am pure sunshine and all about that green energy. I am the ultimate converter around here, I take all that solar energy and turn it straight into fresh, high-energy glucose to keep the entire cell fed and thriving.</p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+            <div class="organelleProfile" id="ribosomeProfile">
+                <h2>Rachel Ribosome</h2>
+                <p>Hello everyone! Im Rachel Ribosome, Im from Colorado Springs, Colorado. In the villa, Im the ultimate builder and protein producer. Whether Im floating free in the cytoplasm or bound to the rough endoplasmic reticulum, I take messenger RNA instructions and read those codons line by line to synthesize precise polypeptide chains.</p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+            <div class="organelleProfile" id="golgiProfile">
+                <h2>Gio Golgi Apparateuz</h2>
+                <p> Yoooo, I am Gio Golgi Appartuez, I am from Tuskegee, Alabama. In the villa, I am the ultimate package guy literally! Think of me as the shipping, handling, and customization hub of the entire place. As proteins and lipids come over to my cis face, I modify them, tag them with carbohydrates or phosphate groups, and pack them up into neat little transport vesicles. </p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+            <div class="organelleProfile" id="lysosomeProfile">
+                <h2>Leah Lysosome</h2>
+                <p> What is up guys! I am Leah Lysosome, I am from LA. My main role in the villa is keeping things spotless, I am the ultimate cleanup crew! I carry all these powerful digestive enzymes, so if there is any toxic drama, old cellular debris, or worn out organelles cluttering up the place, I break it down and recycle it immediately. I am looking for someone who appreciates a guy who keeps it real, cleans up nicely, and is not afraid to handle the messy stuff!</p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+            <div class="organelleProfile" id="membraneProfile">
+                <h2>Calen Cell Membrane</h2>
+                <p>Hello, Im Calen Cell Membrane, I am from Baltimore, Maryland. In the villa, I am the ultimate gatekeeper and protective boundary. Made up of a sleek, fluid phospholipid bilayer packed with transport proteins and cholesterol, I decide exactly who and what comes in or stays out. </p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+            <div class="organelleProfile" id="vacuoleProfile">
+                <h2>Verina Vacuole</h2>
+                <p>Hi Guys! I am Verina Vacuole. I am from Atlanta, Georgia. In the villa, I am the one who holds everything together. I am like the ultimate storage queen, keeping all the vital nutrients, water, and essential reserves safe and locked down so we are always refreshed. I am looking for someone who brings that same stability, space, and deep support to the table! </p>
+                <button id="closeProfile" class="closeProfile">Close Profile</button>
+            </div>
+
+       </div>
+    </body>
+</html>
